@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+  get "/authors/new", to: "authors#new", as: "new_author"
+  get "/authors/:id", to: "authors#show", as: "author"
+  post "/authors", to: "authors#create"
+
+  resources :posts
+
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
